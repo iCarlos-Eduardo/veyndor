@@ -1,0 +1,227 @@
+<app-index-navbar></app-index-navbar>
+
+<!-- Modern Carousel Start -->
+<div class="flex justify-center items-center py-8 bg-blueGray-100">
+  <div class="relative w-full max-w-2xl">
+    <div class="relative overflow-hidden rounded-2xl shadow-xl bg-white flex items-center justify-center"
+      style="height:400px;">
+      <img [src]="carouselSlides[carouselIndex].img" [alt]="carouselSlides[carouselIndex].alt"
+        class="w-full h-full object-cover transition-all duration-700" />
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        <span *ngFor="let slide of carouselSlides; let i = index"
+          class="w-3 h-3 rounded-full cursor-pointer border border-blueGray-400 transition"
+          [ngClass]="i === carouselIndex ? 'bg-blueGray-600' : 'bg-white'" (click)="goToSlide(i)">
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modern Carousel End -->
+
+<!-- Product Cards Start -->
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-2xl font-bold mb-6 text-blueGray-700">Nobres</h2>
+  <div class="flex flex-wrap justify-center">
+    <div *ngFor="let product of products" class="bg-white rounded-lg shadow flex flex-col items-center p-3 h-64 m-4"
+      style="width: 250px;">
+      <img [src]="product.img" [alt]="product.name" class="w-20 object-cover rounded mb-2 shadow">
+      <h3 class="text-base font-semibold text-blueGray-800 mb-1 text-center truncate w-full">{{ product.name }}</h3>
+      <div class="text-sm text-blueGray-500 mb-1 text-center line-clamp-2 w-full">{{ product.description }}</div>
+      <div class="text-lg font-bold text-red-600 mb-2">{{ product.age }} Anos</div>
+      <button
+        class="mt-auto bg-blueGray-700 text-white px-3 py-1 rounded text-xs hover:bg-blueGray-900 transition">Detalhes</button>
+    </div>
+  </div>
+</div>
+<!-- Product Cards End -->
+
+<section class="header relative pt-16 items-center flex h-screen max-h-860-px">
+  <div class="container mx-auto items-center flex flex-wrap">
+    <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+      <div class="pt-32 sm:pt-0">
+        <h2 class="font-semibold text-4xl text-blueGray-600 mb-6">
+          Continente de Veyndor: Sete Regiões Principais
+        </h2>
+        <ul class="space-y-6 text-lg leading-relaxed text-blueGray-500">
+          <li>
+            <span class="font-bold text-blueGray-700">Terras Geladas de Valtoren (Norte):</span>
+            <ul class="list-disc ml-6">
+              <li>Montanhas Sussurrantes, fortalezas nevadas, florestas lunares.</li>
+              <li>Centro militar e espiritual, guardiões dos pactos antigos.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Terras Ardentes de Drakemyr (Sudeste):</span>
+            <ul class="list-disc ml-6">
+              <li>Montanhas vulcânicas, cidades de pedra negra, fornalhas eternas.</li>
+              <li>Nação forjada pela guerra, dominada pelo rei dragônico.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Altaneiros de Aerelion (Leste):</span>
+            <ul class="list-disc ml-6">
+              <li>Penhascos altos, torres ventosas, planaltos dourados.</li>
+              <li>Cavaleiros da honra, justiça e visão.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Sombras de Mornveil (Centro-Oeste):</span>
+            <ul class="list-disc ml-6">
+              <li>Nevoeiros eternos, cidades espiãs, becos sem lei.</li>
+              <li>Capital da informação e da traição.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Arquipélago de Thalmyra (Oeste):</span>
+            <ul class="list-disc ml-6">
+              <li>Ilhas em mar profundo, templos submersos, marés traiçoeiras.</li>
+              <li>Navegadores místicos e fé oceânica.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Bosques Eternos de Virensyl (Sul):</span>
+            <ul class="list-disc ml-6">
+              <li>Florestas ancestrais, círculos druidas, bestas mágicas.</li>
+              <li>Guardiões da natureza e da magia primitiva.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Terras Neutras (Centro):</span>
+            <ul class="list-disc ml-6">
+              <li>Sede do antigo Conselho dos Nobres. Agora palco de conspirações.</li>
+              <li>Ninguém governa. Todos conspiram.</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="mt-12">
+          <a href="#" target="_blank"
+            class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-red-600 active:bg-red-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+            Visitar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img class="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860-px"
+    src="assets/img/map/VeyndorBrasil.png" alt="..." />
+</section>
+
+<section class="mt-48 md:mt-40 relative bg-blueGray-100">
+  <div class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20" style="transform: translateZ(0)">
+    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+      version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+      <polygon class="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+
+  <div class="container mx-auto overflow-hidden pb-20">
+    <div class="flex flex-wrap items-center">
+      <div class="w-full md:w-6/12 px-4 mr-auto ml-auto mt-2">
+        <div class="justify-center flex flex-wrap relative">
+          <div class="my-4 w-full lg:w-6/12 px-4">
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Valtoren.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="Logo Valtoren" class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Valtoren.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Valtoren</p>
+              </div>
+            </div>
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Drakemyr.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="..." class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Drakemyr.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Drakemyr</p>
+              </div>
+            </div>
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Aerelion.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="..." class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Aerelion.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Aerelion</p>
+              </div>
+            </div>
+          </div>
+          <div class="my-4 w-full lg:w-6/12 px-4 lg:mt-16">
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Mornveil.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="..." class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Mornveil.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Mornveil</p>
+              </div>
+            </div>
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Thalmyra.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="..." class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Thalmyra.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Thalmyra</p>
+              </div>
+            </div>
+            <div class="bg-red-600 shadow-lg rounded-lg text-center p-8 relative overflow-hidden mb-6"
+              style="background-image: url('assets/img/house/Virensyl.png'); background-size: cover; background-position: center;">
+              <div class="absolute inset-0 bg-red-600 opacity-80"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <img alt="..." class="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
+                  src="assets/img/house/logo-Virensyl.png" />
+                <p class="text-lg text-white mt-4 font-semibold">Virensyl</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+        <div
+          class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
+          <i class="fas fa-chess-rook text-xl"></i>
+        </div>
+        <h3 class="text-3xl mb-4 font-semibold leading-normal">
+          Casas Nobres com Lemas e Brasões
+        </h3>
+        <ul class="space-y-6 text-lg leading-relaxed text-blueGray-600">
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Valtoren</span><br>
+            <span class="italic">Símbolo:</span> Lobo de prata sob a lua<br>
+            <span class="italic">Lema:</span> "Enquanto houver luar, nós vigiamos."
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Drakemyr</span><br>
+            <span class="italic">Símbolo:</span> Dragão negro em chamas<br>
+            <span class="italic">Lema:</span> "Pelo fogo, dominamos."
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Aerelion</span><br>
+            <span class="italic">Símbolo:</span> Águia dourada em voo<br>
+            <span class="italic">Lema:</span> "Acima de todos, a verdade."
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Mornveil</span><br>
+            <span class="italic">Símbolo:</span> Raposa de três caudas em campo cinza<br>
+            <span class="italic">Lema:</span> "O que não se vê, comanda."
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Thalmyra</span><br>
+            <span class="italic">Símbolo:</span> Concha azul envolta em marés<br>
+            <span class="italic">Lema:</span> "O mar guarda o que a terra esquece."
+          </li>
+          <li>
+            <span class="font-bold text-blueGray-700">Casa Virensyl</span><br>
+            <span class="italic">Símbolo:</span> Veado de jade diante de uma árvore milenar<br>
+            <span class="italic">Lema:</span> "O mundo antigo vive em nós."
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
